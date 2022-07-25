@@ -3,15 +3,21 @@ import './App.css';
 import Header from './header';
 import Footer from  './footer';
 import Horned from  './hornedBeast';
+import Navigationbar from './navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Data from './data.js';
+
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
        <div>
+        <Navigationbar/>
         <Header/>
-        <h3> 2022 07 24 8:00 PM </h3>
+        
         <Horned/>
-
+        <Data/>
         <Footer/>
        </div>
       </header>
