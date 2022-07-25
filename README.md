@@ -10,7 +10,7 @@ Finish time: 6:40
 
 Actual time needed to complete: 50 minutes
 
-
+_______________________________________________
 
 Number and name of feature: Feature #2: Allow users to vote for their favorite beast
 Estimate of time needed to complete: 20 minutes
@@ -20,6 +20,8 @@ Start time: 6:45
 Finish time: 7:15
 
 Actual time needed to complete: 25 minutes
+
+_______________________________________________
 
 
 Number and name of feature: Feature #3: Bootstrap
