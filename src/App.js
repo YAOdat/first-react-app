@@ -6,7 +6,8 @@ import Horned from  './hornedBeast';
 import Navigationbar from './navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Data from './data.js';
-
+import Modall from './SelectedBeast.js';
+import Test from './test.js'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
        
         <Horned/>
         <Data/>
+       
         <Footer/>
        </div>
       </header>

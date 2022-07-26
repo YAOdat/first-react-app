@@ -5,6 +5,7 @@ import BeastData from './data.json';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
+
 class HornedBeast extends React.Component {
 
   constructor(props) {
@@ -37,7 +38,7 @@ class HornedBeast extends React.Component {
 
                 {beastDetail.description}
                 </Card.Text>
-                <Button variant="primary" onClick={this.handleClick}>❤️</Button>
+                <a variant="primary" onClick={this.handleClick}>❤️</a>
                 <span>Votes:{this.state.clickCounter}</span>
               </Card.Body>
             </Card>
