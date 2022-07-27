@@ -1,45 +1,31 @@
 import React from "react";
-import { Modal, Button } from "react-bootstrap";
+import Modal from 'react-bootstrap/Modal';
+
+class ModalRender extends React.Component {
 
 
-
-class Modall extends React.Component {
-  state = {
-    isOpen: false
-  };
-
-  openModal = () => this.setState({ isOpen: true });
-  closeModal = () => this.setState({ isOpen: false });
-
-  render() {
-    return (
-      <div>
-      
-        
-        <div className="d-flex align-items-center justify-content-center" style={{ height: "100vh" }}>
-
-          <Button variant="primary" onClick={this.openModal}>
-            Launch demo modal
-          </Button>
-        </div>
-        <Modal show={this.state.isOpen} onHide={this.closeModal}>
-          <Modal.Header closeButton>
-            <Modal.Title>Modal heading</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-           
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="secondary" onClick={this.closeModal}>
-              Close
-            </Button>
-          </Modal.Footer>
-        </Modal>
-
-        
-      </div>
-    );
-  }
+    render() {
+        return (
+            <div>
+                <Modal show={this.props.show} onHide={this.props.handleClose}>
+                    <Modal.Header closeButton>
+                        <Modal.Title>{this.props.beast.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        <img src={this.props.beast.image_url} alt={this.props.beast.title} style={{ width: '100%', height: '300px' }} />
+                        <h4>{this.props.beast.title}</h4>
+                        <h5>Description : {this.props.beast.description}</h5>
+                    </Modal.Body>
+                    <Modal.Footer>
+                        <button className="btn btn-primary" onClick={this.props.handleClose}>
+                            Close
+                        </button>
+                    </Modal.Footer>
+                </Modal>
+            </div>
+        );
+    }
 }
 
-export default Modall;
+
+export default ModalRender;

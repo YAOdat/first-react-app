@@ -1,68 +1,32 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
+import React from "react";
 import Card from 'react-bootstrap/Card';
-import BeastData from './data.json';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
 
 
-class HornedBeast extends React.Component {
-
+class HornedBeasts extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickCounter: 0
-
-    }
+      counter: 0,
+    };
   }
-
   handleClick = () => {
-    this.setState({ clickCounter: this.state.clickCounter + 1 })
+    this.props.selectedBeast(this.props.arr);
+    this.setState({
+      counter: this.state.counter + 1,
+    });
   }
-
   render() {
-
     return (
-
-      <div>
-         <Row xs={1} md={3} className="g-4">
-        {BeastData.map((beastDetail, index) => {
-          
-          return <div>
-             <Col>
-            <Card style={{ width: '18rem', color: "black" }}>
-              <Card.Img variant="top" src={beastDetail.image_url} alt='Lamblike Beast' onClick={this.handleClick} />
-              <Card.Body>
-                <Card.Title>{beastDetail.title}</Card.Title>
-                <Card.Text>
-
-                {beastDetail.description}
-                </Card.Text>
-                <a variant="primary" onClick={this.handleClick}>❤️</a>
-                <span>Votes:{this.state.clickCounter}</span>
-              </Card.Body>
-            </Card>
-
-            
-            </Col>
-
-          </div>
-
-
-         
-
-        })}
-
-
-
-
-        </Row>
-      </div>
-
-
-
-    )
+      <Card onClick={this.handleClick}>
+        <Card.Img variant="top" src={this.props.image_url} />
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+          <div>{this.state.counter} Votes ❤️ </div>
+        </Card.Body>
+      </Card>
+    );
   }
 }
 
-export default HornedBeast;
+export default HornedBeasts;
