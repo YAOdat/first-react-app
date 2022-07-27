@@ -6,7 +6,7 @@ import Footer from "./footer.js";
 import SelectedBeast from "./SelectedBeast.js";
 import Navigationbar from './navbar'
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import Forms from './components/Forms.js'
 
 
 
@@ -37,6 +37,7 @@ class App extends React.Component {
       <div className="App">
         <Navigationbar />
         <Header />
+        <Forms />
         <Main data={Data} selectedBeast={this.handleSelect} />
         <SelectedBeast
           show={this.state.showModal}
