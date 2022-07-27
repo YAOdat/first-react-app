@@ -17,6 +17,7 @@ class HornedBeasts extends React.Component {
   }
   render() {
     return (
+
       <Card onClick={this.handleClick}>
         <Card.Img variant="top" src={this.props.image_url} />
         <Card.Body>
@@ -30,3 +31,4 @@ class HornedBeasts extends React.Component {
 }
 
 export default HornedBeasts;
+
