@@ -10,7 +10,7 @@ class HornedBeasts extends React.Component {
     };
   }
   handleClick = () => {
-    this.props.selectedBeast(this.props.arr);
+    this.props.beastModal(this.props.arr);
     this.setState({
       counter: this.state.counter + 1,
     });
@@ -22,7 +22,7 @@ class HornedBeasts extends React.Component {
         <Card.Body>
           <Card.Title>{this.props.title}</Card.Title>
           <Card.Text>{this.props.description}</Card.Text>
-          <div>{this.state.counter} Votes ❤️ </div>
+          <div>{this.state.counter}  ❤️ Votes  </div>
         </Card.Body>
       </Card>
     );

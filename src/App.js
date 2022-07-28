@@ -1,12 +1,10 @@
 import React from "react";
-import Header from "./header.js";
-import Main from "./main.js";
-import Data from './data.json';
-import Footer from "./footer.js";
-import SelectedBeast from "./SelectedBeast.js";
-import Navigationbar from './navbar'
+import Header from "./components/header";
+import Main from "./components/main";
+import Footer from "./components/footer";
+import Modal from "./components/SelectedBeast";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Forms from './components/Forms.js'
+let arr= require('./data.json')
 
 
 
@@ -14,15 +12,16 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedBeast: '',
+      beastModal: '',
       showModal: false,
+      beastData: 0,
     };
   }
 
   handleSelect = (item) => {
     this.setState({
       showModal: true,
-      selectedBeast: item
+      beastModal: item
     });
   }
 
@@ -32,20 +31,24 @@ class App extends React.Component {
     });
   }
 
+  filter = (hornsNum) => {
+    this.setState({
+      beastData: hornsNum,
+    })
+  }
+
   render() {
     return (
       <div className="App">
-        <Navigationbar />
         <Header />
-        <Forms />
-        <Main data={Data} selectedBeast={this.handleSelect} />
-        <SelectedBeast
+        <h3>Filter by Number of Horns</h3>
+        <Main data={arr} beastModal={this.handleSelect} dataSelected={this.state.beastData} filter={this.filter} />
+        <Footer />
+        <Modal
           show={this.state.showModal}
-          beast={this.state.selectedBeast}
+          beast={this.state.beastModal}
           handleClose={this.handleClose}
         />
-
-        <Footer />
       </div>
     );
   }
