@@ -27,5 +27,6 @@ class ModalDisplay extends React.Component {
     }
 }
 
+//merge problem
 
 export default ModalDisplay;
