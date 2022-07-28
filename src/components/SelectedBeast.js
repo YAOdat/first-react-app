@@ -1,7 +1,6 @@
 import React from "react";
 import Modal from 'react-bootstrap/Modal';
 
-class ModalRender extends React.Component {
 
 
     render() {
@@ -14,7 +13,9 @@ class ModalRender extends React.Component {
                     <Modal.Body>
                         <img src={this.props.beast.image_url} alt={this.props.beast.title} style={{ width: '100%', height: '300px' }} />
                         <h4>{this.props.beast.title}</h4>
-                        <h5>Description : {this.props.beast.description}</h5>
+
+                        <p>Description : {this.props.beast.description}</p>
+
                     </Modal.Body>
                     <Modal.Footer>
                         <button className="btn btn-primary" onClick={this.props.handleClose}>
@@ -28,4 +29,5 @@ class ModalRender extends React.Component {
 }
 
 
-export default ModalRender;
+
+export default ModalDisplay;
